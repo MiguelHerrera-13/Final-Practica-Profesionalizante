@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioTech - Equipos Audiovisuales Profesionales</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="page-transition">
+
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <h2>AudioTech</h2>
+                    <img src="img/logo.png" alt="AudioTech Logo" class="logo-img">
+                </div>
+                
+                <!-- Menu header -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="microfonos.html" class="nav-link">Micrófonos</a></li>
+                    <li><a href="mix.html" class="nav-link">Mix Digitales</a></li>
+                    <li><a href="mantenimiento.html" class="nav-link">Servicio de Mantenimiento</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+                
+                <!-- Boton hamburguesa para celulares -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+    <section class="hero" id="home">
+        <!-- imagen de fondo principal -->
+        <div class="hero-background">
+            <img src="img/hero-bg.jpg" alt="Hero Background" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Equipos Audiovisuales de Última Tecnología</h1>
+            <p class="hero-subtitle">Potencia tu sonido con nuestra selección premium de equipos profesionales</p>
+            <a href="#productos" class="btn btn-primary">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Seccion de Productos -->
+    <section class="products-preview" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos y Servicios</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="card-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Micrófonos Profesionales</h3>
+                    <p>Micrófonos de alta calidad para grabación y presentaciones en vivo</p>
+                    <a href="microfonos.html" class="btn btn-outline">Ver Catálogo</a>
+                </div>
+                
+                <div class="product-card">
+                    <div class="card-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Mix Digitales</h3>
+                    <p>Consolas de mezcla digital para control total de tu audio</p>
+                    <a href="mix.html" class="btn btn-outline">Ver Catálogo</a>
+                </div>
+                
+                <div class="product-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Servicio de Mantenimiento</h3>
+                    <p>Mantenimiento especializado para tus equipos audiovisuales</p>
+                    <a href="mantenimiento.html" class="btn btn-outline">Más Información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="microfonos.html">Micrófonos</a></li>
+                    <li><a href="mix.html">Mix Digitales</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <div class="contact-info">
+                    <!-- Info contacto -->
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</p>
+                    <p><i class="fas fa-envelope"></i> info@audiotech.com</p>
+                    <p><i class="fas fa-phone"></i> +54 261 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <!-- Enlaces a redes sociales -->
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 AudioTech. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Boton volver arriba -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JS -->
+    <script>
+        // Menú hamburguesa
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer click en un link en el hamburguesa
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Volver arriba
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll para links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
